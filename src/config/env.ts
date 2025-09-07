@@ -2,14 +2,8 @@ import { z } from "zod";
 
 export const env = z
   .object({
-    BOT_TOKEN: z
-      .string()
-      .default("8332964966:AAHEHoh9zCOAxRjQhUJgNd42D3_FT-SQ6_I"),
-    DATABASE_URI: z
-      .string()
-      .default(
-        "mongodb+srv://batmanmusic:5WlCw5mza3mooIdZ@cluster0.0tz0bxl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
-      ),
+    BOT_TOKEN: z.string().min(1, { message: "BOT_TOKEN is required" }),
+    DATABASE_URI: z.string().min(1, { message: "DATABASE_URI is required" }),
     NODE_ENV: z.enum(["development", "production"]).default("development"),
     ADMIN_USERS: z
       .string()
@@ -18,7 +12,7 @@ export const env = z
     REDIS_URI: z.string().default("redis://127.0.0.1:6379"),
     LOGGER_ID: z
       .string()
-      .default("-1002937783164")
+      .min(1, { message: "LOGGER_ID is required" })
       .transform((val) => Number(val)),
   })
   .parse(process.env);
