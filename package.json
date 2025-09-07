@@ -1,0 +1,37 @@
+{
+  "name": "word-guesser-bot",
+  "scripts": {
+    "start": "bun run src/index.ts",
+    "dev": "bun run --watch src/index.ts",
+    "generate": "drizzle-kit generate",
+    "migrate": "drizzle-kit migrate",
+    "studio": "bunx drizzle-kit studio"
+  },
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^5.2.2",
+    "@types/bun": "latest",
+    "@types/express": "^5.0.0",
+    "@types/pg": "^8.11.10",
+    "drizzle-kit": "^0.29.1"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@grammyjs/auto-retry": "^2.0.2",
+    "@grammyjs/parse-mode": "^1.11.1",
+    "@grammyjs/runner": "^2.0.3",
+    "@neondatabase/serverless": "^0.10.4",
+    "better-sqlite3": "^11.7.0",
+    "drizzle-orm": "^0.37.0",
+    "express": "^4.21.2",
+    "grammy": "^1.33.0",
+    "ioredis": "^5.6.1",
+    "natural": "^8.0.1",
+    "pg": "^8.13.1",
+    "postgres": "^3.4.5",
+    "word-definition": "^2.1.6",
+    "wordnet-db": "^3.1.14",
+    "zod": "^3.23.8"
+  }
+}
