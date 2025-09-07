@@ -1,2 +1,2 @@
-web: bun run src/index.ts
+web: node --loader tsx src/index.ts
 
