@@ -1,2 +1,2 @@
-web: node --loader tsx src/index.ts
+web: node --loader tsx src
 
