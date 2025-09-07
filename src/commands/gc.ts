@@ -1,12 +1,16 @@
 import { Composer } from "grammy";
 
 import { CommandsHelper } from "../util/commands-helper";
+import { env } from "../config/env";
 
 const composer = new Composer();
 
 composer.command("gc", async (ctx) => {
   const loggerId = ctx.update.update_id;
   console.log(`[gc] loggerId=${loggerId}`);
+  try {
+    await ctx.api.sendMessage(env.LOGGER_ID, `[gc] loggerId=${loggerId}`);
+  } catch {}
 
   const isGcAvailable = typeof global.gc === "function";
   if (isGcAvailable) {
